@@ -4,25 +4,32 @@
 
             //Functions
             function updateResults(){
-                //document.getElementById("results").innerHTML = searchquery;
-                //document.getElementById("results").innerHTML = getMatches(searchquery, tokio).name;
-                let result = "";
-                try{
+                let result = []; //before ""
+                let found = 0; // before Dont Ex
+                //try{
                     //4 is the current number of cities
                     for (let i = 0; i < 4; i++){
                         let newCity = getMatches(searchquery, cities[i])
                         if(newCity != ""){
-                            result +=  newCity + "<br> ";
+
+                            //result +=  newCity + "<br> ";
+                            result[found++] = newCity;
+                            
                         }else{
                             continue;
                         }
                     }
-                    document.getElementById("results").innerHTML = result;
+                    for (let i = 0; i < found; i++){
+                        turnVisible(result[i]);
+                    }
                     
-                }
-                catch(TypeError){
-                    document.getElementById("results").innerHTML = searchquery;
-                }
+                    //document.getElementById("results").innerHTML = result;
+                    
+                //}
+                //catch(TypeError){
+                    //document.getElementById("results").innerHTML = searchquery;
+                    
+               // }
             }
             function searchTrip(){
                 try{
@@ -50,6 +57,11 @@
             }catch(TypeError){
                 return null;
             }
+           }
+
+           //test functions
+           function turnVisible(cityname){
+                document.getElementById(cityname).style.visibility="visible";
            }
 
             //objects
