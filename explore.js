@@ -1,35 +1,44 @@
 //Variables
             const n_cities = 4; //temporal
             let searchquery = " ";
-
+            let found = 0;
+            let result = [];
+            let search_complete = false;
             //Functions
             function updateResults(){
-                let result = []; //before ""
-                let found = 0; // before Dont Ex
-                //try{
-                    //4 is the current number of cities
-                    for (let i = 0; i < 4; i++){
-                        let newCity = getMatches(searchquery, cities[i])
-                        if(newCity != ""){
+                //Reset card visibility: 
+                if (search_complete == true){
+                    //turn all cards invisible
+                    for (let i = 0; i<found; i++){
+                        turnInvisible(result[i]); 
+                    }
+                    //empty results array
+                    for (let i = 0; i<found; i++){
+                        result[i] = "";
+                    }
+                    //erase research status
+                    search_complete = false;
+                    found = 0;
+                }
 
-                            //result +=  newCity + "<br> ";
-                            result[found++] = newCity;
+                //look for results
+                for (let i = 0; i < n_cities; i++){
+                    let newCity = getMatches(searchquery, cities[i]) // (Lines 56-59) Returns city name or empty string
+                    if(newCity != ""){ 
+                        result[found++] = newCity;
                             
-                        }else{
-                            continue;
-                        }
+                    }else{
+                        continue;
                     }
-                    for (let i = 0; i < found; i++){
-                        turnVisible(result[i]);
-                    }
+                }
+
+                //show results
+                for (let i = 0; i < found; i++){
+                    turnVisible(result[i]);
+                }
                     
-                    //document.getElementById("results").innerHTML = result;
-                    
-                //}
-                //catch(TypeError){
-                    //document.getElementById("results").innerHTML = searchquery;
-                    
-               // }
+                search_complete = true;
+
             }
             function searchTrip(){
                 try{
@@ -38,13 +47,14 @@
                 catch(TypeError){
                     searchquery = "Is Empty";
                 }
+                
                 updateResults();
             }
             function createKeyword(city){
                 return city.name + " " + city.continent + " " + city.country;   
             }
             function getMatches(word, city){
-                flag = city.keywords.match(new RegExp(word, "gi"));
+                flag = new RegExp(word, "gi");
                 return getCityByKeyword(city, flag);
             }
            function getCityByKeyword(city, flag){
@@ -63,6 +73,10 @@
            function turnVisible(cityname){
                 document.getElementById(cityname).style.visibility="visible";
            }
+            function turnInvisible(cityname){
+                document.getElementById(cityname).style.visibility="hidden";
+           }
+           
 
             //objects
             //cities
