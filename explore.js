@@ -3,6 +3,9 @@
             let searchquery = " ";
             let found = 0;
             let result = [];
+
+            const cards = ["A", "B", "C", "D"];
+
             let search_complete = false;
             //Functions
             function updateResults(){
@@ -10,7 +13,8 @@
                 if (search_complete == true){
                     //turn all cards invisible
                     for (let i = 0; i<found; i++){
-                        turnInvisible(result[i]); 
+
+                        turnInvisible(cards[i]); 
                     }
                     //empty results array
                     for (let i = 0; i<found; i++){
@@ -31,10 +35,15 @@
                         continue;
                     }
                 }
+                
+                //Insert results information in cards
+                for (let i = 0; i < found; i++){
+                    document.getElementById("title"+cards[i]).innerHTML = result[i];
+                }
 
                 //show results
                 for (let i = 0; i < found; i++){
-                    turnVisible(result[i]);
+                    turnVisible(cards[i]);
                 }
                     
                 search_complete = true;
@@ -70,11 +79,12 @@
            }
 
            //test functions
-           function turnVisible(cityname){
-                document.getElementById(cityname).style.visibility="visible";
+           function turnVisible(cardID){
+                document.getElementById(cardID).style.visibility="visible";
            }
-            function turnInvisible(cityname){
-                document.getElementById(cityname).style.visibility="hidden";
+            function turnInvisible(cardID){
+                document.getElementById(cardID).style.visibility="hidden";
+                //before city name
            }
            
 
