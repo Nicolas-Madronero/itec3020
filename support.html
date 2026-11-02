@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Agency | About Us & Customer Support</title>
+  <script src="support.js"></script>
+  
+</head>
+
+<body>
+  <header>
+    <h1>Support</h1>
+  </header>
+
+  <main>
+
+    <section id="customer-support">
+      <h2>Customer Support</h2>
+      <p>
+        Our customer support team can help with bookings, itinerary changes, refund
+        questions, travel documents, and general travel inquiries.
+      </p>
+
+      <div class="contact-info">
+        <h3>Agency Contact Information</h3>
+        <p><strong>Phone:</strong> (416) 555-0182</p>
+        <p><strong>Fax:</strong> (416) 555-0193</p>
+        <p><strong>Email:</strong> support@travelagency.ca</p>
+        <p><strong>Address:</strong> 88 The Pond Road, North York, ON, M3J 1P3, Canada</p>
+        <p><strong>Office Hours:</strong> Monday to Friday, 9:00 AM – 6:00 PM EST</p>
+      </div>
+
+      <div class="map-container">
+        <iframe
+          title="Travel Agency location map"
+          src="https://www.google.com/maps?q=Victor+Phillip+Dahdaleh+Building,+88+The+Pond+Road,+North+York,+ON+M3J+1P3&output=embed">
+        </iframe>
+      </div>
+    </section>
+
+    <section id="contact-us">
+      <h2>Contact Us</h2>
+      <p>
+        Have a question? Fill out the form below and our team will respond within one
+        business day.
+      </p>
+
+      <form id="contactForm" novalidate>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" />
+          <p class="error-message" id="nameError"></p>
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" placeholder="Enter your email address" />
+          <p class="error-message" id="emailError"></p>
+        </div>
+
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" placeholder="Enter a 10-digit phone number" />
+          <p class="error-message" id="phoneError"></p>
+        </div>
+
+        <div>
+          <label for="question">Your Question</label>
+          <textarea id="question" name="question" rows="5"
+            placeholder="Write your question here"></textarea>
+          <p class="error-message" id="questionError"></p>
+        </div>
+
+        <button type="submit">Submit Question</button>
+
+        <p class="success-message" id="successMessage">
+          Thank you! Your question has been submitted successfully.
+        </p>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>
