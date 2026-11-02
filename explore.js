@@ -88,10 +88,14 @@
             seul.keywords = createKeyword(seul);
             let busan = {name: "busan", cost: 5000, country: "south korea", continent: "asia", keywords: " ", isFavorite: false};
             busan.keywords = createKeyword(busan);
+            let vancouver = {name: "vancouver", cost: 5000, country: "canada", continent: "north america", keywords: " ", isFavorite: false};
+            vancouver.keywords = createKeyword(vancouver);
+            let madrid = {name: "madrid", cost: 5000, country: "spain", continent: "europe", keywords: " ", isFavorite: false};
+            madrid.keywords = createKeyword(madrid);
 
             //allcities
-            const cities = [tokio, osaka, seul, busan];
+            const cities = [tokio, osaka, vancouver, madrid];
             
             //testing
 
-            console.log(searchquery);
+            console.log(print(madrid.keywords));
