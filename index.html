@@ -1,10 +1,86 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>ITEC3020 Assignment</title>
-    </head>
-    <body>
-        <h1>Here is some text</h1>
-        <a href = "explore.html">explore page</p>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plan a trip anywhere in the world with Travel Advisor.">
+    <title>Travel Advisor</title>
+       <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="wordmark" href="index.html">Travel Advisor</a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="aboutus.html">About Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="hero-intro">Travel, anyfuckwhere</p>
+                <h1 id="hero-title">Your trip anywhere</h1>
+                <p>Tell us where you want to go</p>
+                <a class="button" href="#contact">Start exploring</a>
+            </div>
+            
+            <div class="hero-image">
+                <img src="Plane.jpeg" alt="A plane">
+            </div>
+        </section>
+
+        <!-- Seasonal offer: replace this entire section for the next campaign. -->
+        <section class="japan-offer" id="offer" aria-labelledby="offer-title">
+            <div class="offer-inner">
+                <div class="offer-heading">
+                    <div>
+                        <p class="offer-kicker">A seasonal journey for two</p>
+                        <h2 id="offer-title">Valentine's Day in Japan</h2>
+                        <p>Two cities, one journey. Discover Tokyo and Osaka together.</p>
+                    </div>
+                    <p class="offer-dates">Travel dates<br><strong>[DATES]</strong></p>
+                </div>
+
+                <div class="offer-route">
+                    <article class="offer-stop tokyo-stop">
+                        <img src="Tokyo.jpeg" alt="View of Tokyo">
+                        <div class="stop-details">
+                            <div><h3>Tokyo</h3><p>2 NIGHTS</p></div>
+                            <p>Highlight<br><strong>Explore Tokyo's city streets</strong></p>
+                            <p>Price<br><strong>$1200</strong></p>
+                        </div>
+                    </article>
+
+                    <div class="route-connection" aria-label="Tokyo to Osaka: about 2.5 hours by Shinkansen">
+                        <div class="route-line" aria-hidden="true"></div>
+                        <p>Shinkansen (Bullet Train)<br><strong>About 2.5 hours</strong></p>
+                    </div>
+
+                    <article class="offer-stop osaka-stop">
+                        <img src="Osaka.jpeg" alt="View of Osaka">
+                        <div class="stop-details">
+                            <div><h3>Osaka</h3><p>3 NIGHTS</p></div>
+                            <p>Highlight<br><strong>Discover Osaka's food scene</strong></p>
+                            <p>Price<br><strong>$950</strong></p>
+                        </div>
+                    </article>
+                </div>
+                <a class="button" href="explore.html">See the Japan itinerary</a>
+            </div>
+        </section>
+        <section class="how-it-works section-wrap" id="how-it-works" aria-labelledby="steps-title">
+            <div class="section-heading">
+                <h2 id="steps-title">A little planning goes a long way</h2>
+                <p>From the first idea to the journey itself, here's how to get started.</p>
+            </div>
+            <ol class="steps">
+                <li><h3>Plan</h3><p>Share your ideas and talk through the trip you have in mind.</p></li>
+                <li><h3>Book</h3><p>Choose the details that feel right for your journey.</p></li>
+                <li><h3>Travel</h3><p>Set off and enjoy the places you've been looking forward to.</p></li>
+            </ol>
+        </section>
+    </main>
+</body>
 </html>

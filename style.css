@@ -1,0 +1,105 @@
+* { box-sizing: border-box; }
+
+:root {
+    color: #19233a;
+    background: #f6f7f8;
+    font-family: "Zen Kaku Gothic New", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+body { margin: 0; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+p { max-width: 65ch; }
+h1, h2, h3 { font-family: "Shippori Mincho", Georgia, serif; line-height: 1.2; }
+h1, h2, h3, p { margin-top: 0; }
+a:focus-visible { outline: 3px solid #5b6578; outline-offset: 4px; }
+
+.site-header {
+    min-height: 90px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 48px;
+    padding: 20px 5%;
+    border-bottom: 1px solid #d7dbe1;
+}
+.wordmark { font-family: "Shippori Mincho", Georgia, serif; font-size: 1.35rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.main-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.main-nav a { text-decoration: none; }
+.main-nav a:hover { text-decoration: underline; }
+.button { display: inline-block; padding: 14px 23px; background: #19233a; color: #fff; font-size: 0.9rem; font-weight: 700; text-decoration: none; }
+.button:hover { background: #34425c; }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 47%); min-height: 650px; }
+.hero-copy { align-self: center; padding: 90px 9% 100px; }
+.hero-intro { color: #5b6578; margin-bottom: 24px; }
+.hero h1 { max-width: 13ch; margin-bottom: 25px; font-size: clamp(2.6rem, 4.5vw, 3.76rem); }
+.hero-copy > p:not(.hero-intro) { max-width: 48ch; color: #5b6578; margin-bottom: 32px; }
+.hero-image { display: flex; align-items: center; min-width: 0; }
+.hero-image img { width: 100%; height: auto; }
+
+/* This section contains all the seasonal offer styling. */
+.japan-offer { background: #f3d9de; padding: 82px 5% 90px; }
+.offer-inner { max-width: 1400px; margin: 0 auto; }
+.offer-heading { display: flex; justify-content: space-between; align-items: end; gap: 35px; padding-bottom: 30px; border-bottom: 1px solid #a8324e; }
+.offer-kicker { margin-bottom: 12px; color: #a8324e; font-weight: 700; }
+.offer-heading h2 { margin-bottom: 15px; font-size: clamp(2rem, 3.2vw, 2.8rem); }
+.offer-heading p:last-child { margin-bottom: 0; }
+.offer-dates { min-width: 120px; color: #a8324e; }
+.offer-route { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(120px, 0.38fr) minmax(0, 0.9fr); align-items: start; margin: 32px 0 35px; }
+.offer-stop img { width: 100%; height: 340px; object-fit: cover; }
+.osaka-stop img { height: 250px; }
+.stop-details { display: grid; grid-template-columns: 1fr 1.2fr auto; gap: 15px; padding-top: 18px; }
+.stop-details h3 { margin-bottom: 4px; font-size: 1.65rem; }
+.stop-details p { margin-bottom: 0; color: #5b6578; font-size: 0.82rem; }
+.stop-details strong { color: #19233a; font-weight: 700; }
+.route-connection { padding-top: 120px; color: #a8324e; }
+.route-line { position: relative; width: 100%; height: 1px; background: #a8324e; }
+.route-line::before, .route-line::after { position: absolute; top: -4px; width: 9px; height: 9px; border-radius: 50%; background: #a8324e; content: ""; }
+.route-line::before { left: 0; }
+.route-line::after { right: 0; }
+.route-connection p { margin: 12px 10px 0; font-size: 0.8rem; line-height: 1.4; }
+
+.section-wrap { max-width: 1500px; margin: 0 auto; padding: 110px 5%; }
+.section-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+.section-heading h2 { max-width: 20ch; margin-bottom: 0; font-size: clamp(2rem, 3vw, 2.6rem); }
+.section-heading p { color: #5b6578; }
+.how-it-works { border-top: 1px solid #cbd1da; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 45px; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.steps li { padding-top: 20px; border-top: 1px solid #19233a; counter-increment: step; }
+.steps li::before { content: "0" counter(step); display: block; margin-bottom: 38px; color: #5b6578; }
+.steps h3 { margin-bottom: 12px; font-size: 1.2rem; }
+.steps p { color: #5b6578; }
+
+@media (max-width: 900px) {
+    .site-header { grid-template-columns: 1fr; gap: 20px; }
+    .main-nav { width: 100%; }
+    .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 42%); min-height: 500px; }
+    .hero-copy { padding: 70px 8%; }
+    .offer-route { grid-template-columns: minmax(0, 1.2fr) 90px minmax(0, 1fr); }
+    .stop-details { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .site-header { padding: 16px 5%; }
+    .main-nav { gap: 18px; font-size: 0.9rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-copy { padding: 70px 5%; }
+    /* Keep the photo shrinking smoothly when the hero stacks. */
+    .hero-image { width: min(100%, calc(180px + 12vw)); justify-self: center; }
+    .japan-offer { padding: 65px 5%; }
+    .offer-heading { display: block; }
+    .offer-dates { margin-top: 25px; }
+    .offer-route { grid-template-columns: 1fr; }
+    .offer-stop img { height: 300px; }
+    .osaka-stop img { height: 230px; }
+    .stop-details { grid-template-columns: 1fr 1fr; }
+    .route-connection { padding: 25px 0; }
+    .route-connection p { margin-left: 0; }
+    .section-wrap { padding: 75px 5%; }
+    .section-heading { grid-template-columns: 1fr; gap: 20px; }
+    .steps { grid-template-columns: 1fr; gap: 25px; }
+    .steps li::before { margin-bottom: 18px; }
+}
