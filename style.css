@@ -1,105 +1,438 @@
+/* styles used across the page */
 * { box-sizing: border-box; }
 
 :root {
-    color: #19233a;
+    color: #000000;
     background: #f6f7f8;
-    font-family: "Zen Kaku Gothic New", Arial, sans-serif;
-    font-size: 17px;
     line-height: 1.6;
 }
 
-body { margin: 0; }
-a { color: inherit; }
-img { display: block; max-width: 100%; }
-p { max-width: 65ch; }
-h1, h2, h3 { font-family: "Shippori Mincho", Georgia, serif; line-height: 1.2; }
-h1, h2, h3, p { margin-top: 0; }
-a:focus-visible { outline: 3px solid #5b6578; outline-offset: 4px; }
-
-.site-header {
-    min-height: 90px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    align-items: center;
-    gap: 48px;
-    padding: 20px 5%;
-    border-bottom: 1px solid #d7dbe1;
+body {
+    margin: 0;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 30px;
 }
-.wordmark { font-family: "Shippori Mincho", Georgia, serif; font-size: 1.35rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
-.main-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-.main-nav a { text-decoration: none; }
-.main-nav a:hover { text-decoration: underline; }
-.button { display: inline-block; padding: 14px 23px; background: #19233a; color: #fff; font-size: 0.9rem; font-weight: 700; text-decoration: none; }
+
+a { color: inherit; }
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+p { max-width: 65ch; }
+
+a:focus-visible {
+    outline: 3px solid #5b6578;
+    outline-offset: 4px;
+}
+
+/* header */
+/* the white row holds the brand, contact details, and support link. */
+.site-header {
+    background: #fff;
+    color: #8872af;
+}
+
+.header-top {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(200px, 1fr) minmax(240px, 26.3%);
+    min-height: 112px;
+}
+
+/* these parts of the header use a flex layout */
+.header-brand,
+.header-contact,
+.header-support,
+.main-nav { display: flex; }
+
+/* vertically align the agency name and support link */
+.header-brand,
+.header-support { align-items: center; }
+
+/* the support link and navigation's purple background */
+.header-support,
+.main-nav { background: #8872af; }
+
+.header-brand {
+    padding: 18px 20px 18px max(24px, calc(50vw - 630px));
+}
+
+.header-contact {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 16px 30px;
+    font-size: 1rem;
+    line-height: 1.35;
+    text-align: right;
+}
+
+.header-phone {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.header-support {
+    gap: 16px;
+    padding: 20px clamp(20px, 3vw, 48px);
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.3;
+    text-decoration: none;
+}
+
+.header-support-icon {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+}
+
+/* nav bar */
+.main-nav { justify-content: center; }
+
+.main-nav a {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    max-width: 250px;
+    min-height: 50px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+}
+
+.header-support:hover,
+.main-nav a:hover { background: #493175; }
+
+.site-header a:focus-visible {
+    outline: 3px solid #271646;
+    outline-offset: -4px;
+}
+
+.site-header .header-support:focus-visible,
+.main-nav a:focus-visible { outline-color: #fff; }
+
+/* header on smaller screens */
+@media (max-width: 700px) {
+    .header-top { grid-template-columns: 1fr 1fr; }
+    .header-brand { padding: 18px 16px; }
+    .header-contact { padding: 16px; }
+    .header-support {
+        grid-column: 1 / -1;
+        justify-content: center;
+        padding: 12px 16px;
+    }
+    .header-support-icon {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* header on phone-sized screens */
+@media (max-width: 480px) {
+    .header-top { grid-template-columns: 1fr; }
+    .header-brand {
+        justify-content: center;
+        padding-bottom: 8px;
+    }
+    .header-contact {
+        align-items: center;
+        padding-top: 0;
+        text-align: center;
+    }
+    .header-support { grid-column: auto; }
+    .main-nav a {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+}
+
+/* buttons used on the page */
+.button,
+.travel-intro-actions a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 23px;
+    background: #d183aa;
+    color: #ffffff;
+    font-size: 0.9rem;
+    border-radius: 20px;
+}
+
 .button:hover { background: #34425c; }
 
-.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 47%); min-height: 650px; }
-.hero-copy { align-self: center; padding: 90px 9% 100px; }
-.hero-intro { color: #5b6578; margin-bottom: 24px; }
-.hero h1 { max-width: 13ch; margin-bottom: 25px; font-size: clamp(2.6rem, 4.5vw, 3.76rem); }
-.hero-copy > p:not(.hero-intro) { max-width: 48ch; color: #5b6578; margin-bottom: 32px; }
-.hero-image { display: flex; align-items: center; min-width: 0; }
-.hero-image img { width: 100%; height: auto; }
+/* intro part of the page*/
+.travel-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 650px;
+    padding: clamp(72px, 9vw, 128px) 6%;
+    color: #ffffff;
+    text-align: center;
+    background: linear-gradient(125deg, #271646, #8872af);
+}
 
-/* This section contains all the seasonal offer styling. */
-.japan-offer { background: #f3d9de; padding: 82px 5% 90px; }
-.offer-inner { max-width: 1400px; margin: 0 auto; }
-.offer-heading { display: flex; justify-content: space-between; align-items: end; gap: 35px; padding-bottom: 30px; border-bottom: 1px solid #a8324e; }
-.offer-kicker { margin-bottom: 12px; color: #a8324e; font-weight: 700; }
-.offer-heading h2 { margin-bottom: 15px; font-size: clamp(2rem, 3.2vw, 2.8rem); }
-.offer-heading p:last-child { margin-bottom: 0; }
-.offer-dates { min-width: 120px; color: #a8324e; }
-.offer-route { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(120px, 0.38fr) minmax(0, 0.9fr); align-items: start; margin: 32px 0 35px; }
-.offer-stop img { width: 100%; height: 340px; object-fit: cover; }
-.osaka-stop img { height: 250px; }
-.stop-details { display: grid; grid-template-columns: 1fr 1.2fr auto; gap: 15px; padding-top: 18px; }
-.stop-details h3 { margin-bottom: 4px; font-size: 1.65rem; }
-.stop-details p { margin-bottom: 0; color: #5b6578; font-size: 0.82rem; }
-.stop-details strong { color: #19233a; font-weight: 700; }
-.route-connection { padding-top: 120px; color: #a8324e; }
-.route-line { position: relative; width: 100%; height: 1px; background: #a8324e; }
-.route-line::before, .route-line::after { position: absolute; top: -4px; width: 9px; height: 9px; border-radius: 50%; background: #a8324e; content: ""; }
+.travel-intro h1 {
+    margin: 0 auto 24px;
+    font-size: clamp(2.75rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -.04em;
+}
+
+.travel-intro-text {
+    margin: 0 auto;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.6;
+}
+
+.travel-intro-actions,
+.travel-intro-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.travel-intro-actions { margin-top: 34px; }
+.travel-intro-features { margin-top: 14px; }
+
+.travel-intro-features p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 240px;
+    min-width: 0;
+    max-width: 300px;
+    min-height: 100px;
+    margin: 0;
+    padding: 22px 24px;
+    border-left: 5px solid #f3d9de;
+    background: rgba(39, 22, 70, .65);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.travel-intro-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 240px;
+    max-width: 100%;
+    min-height: 54px;
+    padding: 14px 24px;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    font-size: .95rem;
+}
+
+.travel-intro-primary, .travel-intro-secondary { background: #fff; color: #271646;}
+.travel-intro-primary:hover, .travel-intro-secondary:hover { background: #f3d9de; }
+
+.travel-intro-actions a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+}
+
+/* valentine's day promotion */
+.japan-promotion {
+    background: #e3d9f3;
+    padding: 82px 5% 90px;
+}
+
+.promotion-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* offer button */
+.promotion-inner > .button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.promotion-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 35px;
+    padding-bottom: 30px;
+}
+
+.promotion-kicker {
+    margin-bottom: 12px;
+    color: #a8324e;
+    font-weight: 700;
+}
+
+.promotion-heading h2 {
+    margin-bottom: 15px;
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+}
+
+.promotion-heading p:last-child { margin-bottom: 0; }
+
+.promotion-dates {
+    min-width: 120px;
+    color: #a8324e;
+}
+
+.promotion-route {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(120px, 0.38fr) minmax(0, 1fr);
+    align-items: start;
+    margin: 32px 0 35px;
+}
+
+.promotion-stop img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.stop-details {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr auto;
+    gap: 15px;
+    padding-top: 18px;
+}
+
+.stop-details h3 {
+    margin-bottom: 4px;
+    font-size: 1.65rem;
+}
+
+.stop-details p {
+    margin-bottom: 0;
+    color: #5b6578;
+    font-size: 0.82rem;
+}
+
+.stop-details strong { color: #19233a; }
+
+.route-connection {
+    padding-top: 120px;
+    color: #a8324e;
+}
+
+.route-line {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background: #a8324e;
+}
+
+.route-line::before,
+.route-line::after {
+    position: absolute;
+    top: -4px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #a8324e;
+    content: "";
+}
+
 .route-line::before { left: 0; }
+
 .route-line::after { right: 0; }
-.route-connection p { margin: 12px 10px 0; font-size: 0.8rem; line-height: 1.4; }
 
-.section-wrap { max-width: 1500px; margin: 0 auto; padding: 110px 5%; }
-.section-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px; }
-.section-heading h2 { max-width: 20ch; margin-bottom: 0; font-size: clamp(2rem, 3vw, 2.6rem); }
-.section-heading p { color: #5b6578; }
-.how-it-works { border-top: 1px solid #cbd1da; }
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 45px; margin: 0; padding: 0; list-style: none; counter-reset: step; }
-.steps li { padding-top: 20px; border-top: 1px solid #19233a; counter-increment: step; }
-.steps li::before { content: "0" counter(step); display: block; margin-bottom: 38px; color: #5b6578; }
-.steps h3 { margin-bottom: 12px; font-size: 1.2rem; }
-.steps p { color: #5b6578; }
+.route-connection p {
+    margin: 12px 10px 0;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
 
+/* jow the trip planning works */
+.how-it-works {
+    padding: 110px 5%;
+    background: #ffffff;
+}
+
+.section-heading {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    max-width: 20ch;
+    margin: 0;
+    color: #4c3080;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    line-height: 1.15;
+}
+
+/* shared paragraph styles for the planning section */
+.section-heading p,
+.steps p {
+    margin: 0;
+    color: #5b6578;
+}
+
+.section-heading p { font-size: 1.1rem; }
+
+.steps {
+    display: grid;
+    /* fit as many step boxes per row as space allows */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.steps li {
+    padding: 32px;
+    border: 5px solid #8872af;
+    border-radius: 10px;
+}
+
+.steps h3 {
+    margin: 0 0 12px;
+    font-size: 1.35rem;
+}
+
+.steps p { font-size: 1rem; }
+
+/* page layout on smaller screens */
 @media (max-width: 900px) {
-    .site-header { grid-template-columns: 1fr; gap: 20px; }
-    .main-nav { width: 100%; }
-    .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 42%); min-height: 500px; }
-    .hero-copy { padding: 70px 8%; }
-    .offer-route { grid-template-columns: minmax(0, 1.2fr) 90px minmax(0, 1fr); }
+    .promotion-route { grid-template-columns: minmax(0, 1fr) 90px minmax(0, 1fr); }
     .stop-details { grid-template-columns: 1fr; }
 }
 
+/* page layout on phone-sized screens */
 @media (max-width: 600px) {
-    .site-header { padding: 16px 5%; }
-    .main-nav { gap: 18px; font-size: 0.9rem; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-copy { padding: 70px 5%; }
-    /* Keep the photo shrinking smoothly when the hero stacks. */
-    .hero-image { width: min(100%, calc(180px + 12vw)); justify-self: center; }
-    .japan-offer { padding: 65px 5%; }
-    .offer-heading { display: block; }
-    .offer-dates { margin-top: 25px; }
-    .offer-route { grid-template-columns: 1fr; }
-    .offer-stop img { height: 300px; }
-    .osaka-stop img { height: 230px; }
+    .japan-promotion { padding: 65px 5%; }
+    .promotion-heading { display: block; }
+    .promotion-dates { margin-top: 25px; }
+    .promotion-route { grid-template-columns: 1fr; }
+    .promotion-stop img { height: 300px; }
     .stop-details { grid-template-columns: 1fr 1fr; }
     .route-connection { padding: 25px 0; }
     .route-connection p { margin-left: 0; }
-    .section-wrap { padding: 75px 5%; }
-    .section-heading { grid-template-columns: 1fr; gap: 20px; }
-    .steps { grid-template-columns: 1fr; gap: 25px; }
-    .steps li::before { margin-bottom: 18px; }
+    .how-it-works { padding: 75px 5%; }
+    .section-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .steps {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
 }

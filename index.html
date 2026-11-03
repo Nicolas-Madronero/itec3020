@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- HEADER -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Plan a trip anywhere in the world with Travel Advisor.">
+    <!--this imports google fonts its a font I found it looked good-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">    <meta charset="UTF-8">
+
+    <!--this helps the page fit different screen sizes-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--the title that shows on the browser tab-->
     <title>Travel Advisor</title>
+    <!--link to css-->
        <link rel="stylesheet" href="style.css">
+       
 </head>
 <body>
-    %navbar%
     <header class="site-header">
-        <a class="wordmark" href="index.html">Travel Advisor</a>
-        <nav class="main-nav" aria-label="Main navigation">
+        <div class="header-top">
+            <!--placeholder for the agency name cuz we dont know it yet-->
+            <span class="header-brand">Travel Agency</span>
+            <!--Contact info-->
+            <div class="header-contact">
+                <span class="header-phone">(416) 555-0182</span>
+                <span>88 The Pond Road, North York</span>
+            </div>
+
+            <!--link to the support page-->
+            <a class="header-support" href="support.html">
+                <!--the icon thing for like the support thing on the top right side of the page-->
+                <svg class="header-support-icon" viewBox="0 0 48 48">
+                    <circle cx="24" cy="13" r="6" fill="currentColor" />
+                    <circle cx="10" cy="17" r="4" fill="currentColor" />
+                    <circle cx="38" cy="17" r="4" fill="currentColor" />
+                    <path d="M14 35c0-6 4.5-10 10-10s10 4 10 10v3c-6 3-14 3-20 0zM3 33c0-4 3-7 7-7 1 0 2 .2 3 .6A14 14 0 0 0 11 35v2c-3 0-6-1-8-2zm42 0v2c-2 1-5 2-8 2v-2a14 14 0 0 0-2-8.4c1-.4 2-.6 3-.6 4 0 7 3 7 7z" fill="currentColor" />
+                </svg>
+                <span>Travel advice<br><strong>& support</strong></span>
+            </a>
+        </div>
+
+        <!--links in the nav bar-->
+        <nav class="main-nav">
             <a href="index.html">Home</a>
             <a href="explore.html">Explore</a>
             <a href="support.html">Support</a>
@@ -19,67 +49,80 @@
     </header>
 
     <main>
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-copy">
-                <p class="hero-intro">Travel, anyfuckwhere</p>
-                <h1 id="hero-title">Your trip anywhere</h1>
-                <p>Tell us where you want to go</p>
-                <a class="button" href="#contact">Start exploring</a>
-            </div>
-            
-            <div class="hero-image">
-                <img src="Plane.jpeg" alt="A plane">
+        <!--intro at the top of the home page-->
+        <section class="travel-intro">
+            <div class="travel-intro-content">
+                <h1 id="intro-title">Life is short, enjoy the world</h1>
+                <p class="travel-intro-text">Take a look at our destinations and start planning a trip that feels right for you.</p>
+                <!--buttons to explore destinations or support-->
+                <div class="travel-intro-actions">
+                    <a class="travel-intro-primary" href="explore.html">Explore destinations</a>
+                    <a class="travel-intro-secondary" href="support.html">Talk to us</a>
+                </div>
+                <!--information blocks under the buttons-->
+                <div class="travel-intro-features">
+                    <p>MANY DESTINATIONS</p>
+                    <p>GREAT PRICES</p>
+                </div>
             </div>
         </section>
 
-%offer%
-        <section class="japan-offer" id="offer" aria-labelledby="offer-title">
-            <div class="offer-inner">
-                <div class="offer-heading">
+<!--promotion for valentines day-->
+        <section class="japan-promotion">
+            <div class="promotion-inner">
+                <!--title, description and other stuff of the promotion-->
+                <div class="promotion-heading">
                     <div>
-                        <p class="offer-kicker">A seasonal journey for two</p>
-                        <h2 id="offer-title">Valentine's Day in Japan</h2>
+                        <p class="promotion-kicker">A seasonal journey for two</p>
+                        <h2 id="promotion-title">Valentine's Day in Japan</h2>
                         <p>Two cities, one journey. Discover Tokyo and Osaka together.</p>
                     </div>
-                    <p class="offer-dates">Travel dates<br><strong>[DATES]</strong></p>
+                    <p class="promotion-dates">Travel dates<br><strong>[DATES]</strong></p>
                 </div>
 
-                <div class="offer-route">
-                    <article class="offer-stop tokyo-stop">
+                <!--the two stops on the trip-->
+                <div class="promotion-route">
+                    <!--tokyo picture and trip details-->
+                    <article class="promotion-stop">
                         <img src="Tokyo.jpeg" alt="View of Tokyo">
                         <div class="stop-details">
                             <div><h3>Tokyo</h3><p>2 NIGHTS</p></div>
-                            <p>Highlight<br><strong>Explore Tokyo's city streets</strong></p>
-                            <p>Price<br><strong>$1200</strong></p>
+                            <div><h3>Highlight</h3><p><strong>Explore Tokyo's city streets</strong></p></div>
+                            <div><h3>Price</h3><p><strong>$1200</strong></p></div>
                         </div>
                     </article>
 
-                    <div class="route-connection" aria-label="Tokyo to Osaka: about 2.5 hours by Shinkansen">
-                        <div class="route-line" aria-hidden="true"></div>
+                    <!--the train between Tokyo and Osaka-->
+                    <div class="route-connection">
+                        <div class="route-line"></div>
                         <p>Shinkansen (Bullet Train)<br><strong>About 2.5 hours</strong></p>
                     </div>
 
-                    <article class="offer-stop osaka-stop">
+                    <!--osaka picture and trip details-->
+                    <article class="promotion-stop osaka-stop">
                         <img src="Osaka.jpeg" alt="View of Osaka">
                         <div class="stop-details">
                             <div><h3>Osaka</h3><p>3 NIGHTS</p></div>
-                            <p>Highlight<br><strong>Discover Osaka's food scene</strong></p>
-                            <p>Price<br><strong>$950</strong></p>
+                            <div><h3>Highlight</h3><p><strong>Discover Osaka's food scene</strong></p></div>
+                            <div><h3>Price</h3><p><strong>$950</strong></p></div>
                         </div>
                     </article>
                 </div>
-                <a class="button" href="explore.html">See the Japan itinerary</a>
+                <!--link to the explore page-->
+                <a class="button" href="explore.html">See the Japan offer</a>
             </div>
         </section>
-        <section class="how-it-works section-wrap" id="how-it-works" aria-labelledby="steps-title">
+        <!--how the trip planning works-->
+        <section class="how-it-works">
             <div class="section-heading">
                 <h2 id="steps-title">A little planning goes a long way</h2>
                 <p>From the first idea to the journey itself, here's how to get started.</p>
             </div>
+            <!--the three steps for planning, booking and travelling-->
             <ol class="steps">
-                <li><h3>Plan</h3><p>Share your ideas and talk through the trip you have in mind.</p></li>
-                <li><h3>Book</h3><p>Choose the details that feel right for your journey.</p></li>
-                <li><h3>Travel</h3><p>Set off and enjoy the places you've been looking forward to.</p></li>
+                <li><h3>1- Plan</h3><p>Share your ideas and talk through the trip you have in mind.</p></li>
+                <li><h3>2- Book</h3><p>Choose the details that feel right for your journey.</p></li>
+                <li><h3>3- Travel</h3><p>Set off and enjoy the places you've been looking forward to.</p></li>
             </ol>
         </section>
     </main>
