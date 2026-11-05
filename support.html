@@ -1,31 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--matching the font that was used in the index-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">    <meta charset="UTF-8">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel Agency | About Us & Customer Support</title>
-  <script src="support.js"></script>
-  <link rel="stylesheet" href="style.css">
-
-  
+  <title>Travel Agency | Contact Us & Customer Support</title>
+  <link rel="stylesheet" href="style.css">  
 </head>
 
 <body>
-  <header>
-    <h1>Support</h1>
-  </header>
+  <header class="site-header">
+        <div class="header-top">
+            <span class="header-brand">Travel Agency</span>
+            <div class="header-contact">
+                <span class="header-phone">(416) 555-0182</span>
+                <span>88 The Pond Road, North York</span>
+            </div>
+            <a class="header-support" href="support.html">
+                <svg class="header-support-icon" viewBox="0 0 48 48">
+                    <circle cx="24" cy="13" r="6" fill="currentColor" />
+                    <circle cx="10" cy="17" r="4" fill="currentColor" />
+                    <circle cx="38" cy="17" r="4" fill="currentColor" />
+                    <path d="M14 35c0-6 4.5-10 10-10s10 4 10 10v3c-6 3-14 3-20 0zM3 33c0-4 3-7 7-7 1 0 2 .2 3 .6A14 14 0 0 0 11 35v2c-3 0-6-1-8-2zm42 0v2c-2 1-5 2-8 2v-2a14 14 0 0 0-2-8.4c1-.4 2-.6 3-.6 4 0 7 3 7 7z" fill="currentColor" />
+                </svg>
+                <span>Travel advice<br><strong>& support</strong></span>
+            </a>
+        </div>
 
-  <main>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="support.html">Support</a>
+        </nav>
+    </header>
 
-    <section id="customer-support">
-      <h2>Customer Support</h2>
-      <p>
-        Our customer support team can help with bookings, itinerary changes, refund
-        questions, travel documents, and general travel inquiries.
-      </p>
+<main>
+  <section id="customer-support" class="support-intro">
+    <h2>Customer Support</h2>
+    <p>
+      Our customer support team can help with bookings, itinerary changes, refund
+      questions, travel documents, and general travel inquiries.
+    </p>
+  </section>
+
+  <div class="support-layout">
+    <section id="agency-contact" class="support-column">
+      <h3>Agency Contact Information</h3>
 
       <div class="contact-info">
-        <h3>Agency Contact Information</h3>
         <p><strong>Phone:</strong> (416) 555-0182</p>
         <p><strong>Fax:</strong> (416) 555-0193</p>
         <p><strong>Email:</strong> support@travelagency.ca</p>
@@ -41,11 +67,11 @@
       </div>
     </section>
 
-    <section id="contact-us">
-      <h2>Contact Us</h2>
+    <section id="contact-us" class="support-column">
+      <h3>Contact Us</h3>
       <p>
-        Have a question? Fill out the form below and our team will respond within one
-        business day.
+        Have a question? Fill out the form below and our team will respond within
+        one business day.
       </p>
 
       <form id="contactForm" novalidate>
@@ -83,5 +109,6 @@
     </section>
   </main>
 
+  <script src="support.js"></script>
 </body>
 </html>
