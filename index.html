@@ -11,32 +11,21 @@
     <!--this helps the page fit different screen sizes-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--the title that shows on the browser tab-->
-    <title>Travel Advisor</title>
+    <title>Broke Abroad</title>
     <!--link to css-->
        <link rel="stylesheet" href="style.css">
        
 </head>
 <body>
     <header class="site-header">
-        <div class="header-top">
+        <div class="header-top header-top-home">
             <!--placeholder for the agency name cuz we dont know it yet-->
-            <span class="header-brand">Travel Agency</span>
-            <!--Contact info-->
-            <div class="header-contact">
+            <span class="header-brand">Broke Abroad</span>
+
+            <!--contact information and link to the support page-->
+            <a class="header-support" href="support.html">
                 <span class="header-phone">(416) 555-0182</span>
                 <span>88 The Pond Road, North York</span>
-            </div>
-
-            <!--link to the support page-->
-            <a class="header-support" href="support.html">
-                <!--the icon thing for like the support thing on the top right side of the page-->
-                <svg class="header-support-icon" viewBox="0 0 48 48">
-                    <circle cx="24" cy="13" r="6" fill="currentColor" />
-                    <circle cx="10" cy="17" r="4" fill="currentColor" />
-                    <circle cx="38" cy="17" r="4" fill="currentColor" />
-                    <path d="M14 35c0-6 4.5-10 10-10s10 4 10 10v3c-6 3-14 3-20 0zM3 33c0-4 3-7 7-7 1 0 2 .2 3 .6A14 14 0 0 0 11 35v2c-3 0-6-1-8-2zm42 0v2c-2 1-5 2-8 2v-2a14 14 0 0 0-2-8.4c1-.4 2-.6 3-.6 4 0 7 3 7 7z" fill="currentColor" />
-                </svg>
-                <span>Travel advice<br><strong>& support</strong></span>
             </a>
         </div>
 
@@ -49,22 +38,19 @@
     </header>
 
     <main>
-        <!--intro at the top of the home page-->
-        <section class="travel-intro">
-            <div class="travel-intro-content">
-                <h1 id="intro-title">Life is short, enjoy the world</h1>
-                <p class="travel-intro-text">Take a look at our destinations and start planning a trip that feels right for you.</p>
-                <!--buttons to explore destinations or support-->
-                <div class="travel-intro-actions">
-                    <a class="travel-intro-primary" href="explore.html">Explore destinations</a>
-                    <a class="travel-intro-secondary" href="support.html">Talk to us</a>
-                </div>
-                <!--information blocks under the buttons-->
-                <div class="travel-intro-features">
-                    <p>MANY DESTINATIONS</p>
-                    <p>GREAT PRICES</p>
-                </div>
+        </section>
+        <!--how the trip planning works-->
+        <section class="how-it-works">
+            <div class="section-heading">
+                <h2 id="steps-title">A little planning goes a long way</h2>
+                <p>From the first idea to the journey itself, here's how to get started.</p>
             </div>
+            <!--the three steps for planning, booking and travelling-->
+            <ol class="steps">
+                <li><h3>1- Plan</h3><p>Share your ideas and talk through the trip you have in mind.</p></li>
+                <li><h3>2- Book</h3><p>Choose the details that feel right for your journey.</p></li>
+                <li><h3>3- Travel</h3><p>Set off and enjoy the places you've been looking forward to.</p></li>
+            </ol>
         </section>
 
 <!--promotion for valentines day-->
@@ -73,7 +59,7 @@
                 <!--title, description and other stuff of the promotion-->
                 <div class="promotion-heading">
                     <div>
-                        <p class="promotion-kicker">A seasonal journey for two</p>
+                        <p class="promotion-kicker">Special offer!</p>
                         <h2 id="promotion-title">Valentine's Day in Japan</h2>
                         <p>Two cities, one journey. Discover Tokyo and Osaka together.</p>
                     </div>
@@ -111,19 +97,23 @@
                 <!--link to the explore page-->
                 <a class="button" href="explore.html">See the Japan offer</a>
             </div>
-        </section>
-        <!--how the trip planning works-->
-        <section class="how-it-works">
-            <div class="section-heading">
-                <h2 id="steps-title">A little planning goes a long way</h2>
-                <p>From the first idea to the journey itself, here's how to get started.</p>
+        
+        <!--intro at the top of the home page-->
+        <section class="travel-intro">
+            <div class="travel-intro-content">
+                <h1 id="intro-title">Life is short, enjoy the world</h1>
+                <p class="travel-intro-text">Take a look at our destinations and start planning a trip that feels right for you.</p>
+                <!--buttons to explore destinations or support-->
+                <div class="travel-intro-actions">
+                    <a class="travel-intro-primary" href="explore.html">Explore destinations</a>
+                    <a class="travel-intro-secondary" href="support.html">Talk to us</a>
+                </div>
+                <!--information blocks under the buttons-->
+                <div class="travel-intro-features">
+                    <p>MANY DESTINATIONS</p>
+                    <p>GREAT PRICES</p>
+                </div>
             </div>
-            <!--the three steps for planning, booking and travelling-->
-            <ol class="steps">
-                <li><h3>1- Plan</h3><p>Share your ideas and talk through the trip you have in mind.</p></li>
-                <li><h3>2- Book</h3><p>Choose the details that feel right for your journey.</p></li>
-                <li><h3>3- Travel</h3><p>Set off and enjoy the places you've been looking forward to.</p></li>
-            </ol>
         </section>
     </main>
 </body>
