@@ -39,6 +39,8 @@
                 //Insert results information in cards
                 for (let i = 0; i < found; i++){
                     document.getElementById("title"+cards[i]).innerHTML = result[i];
+                    document.getElementById("cost"+cards[i]).innerHTML = "Cost: " + getCityByName(result[i]).cost;
+                    //Recommend change: reuslt should be a city array, not a string array. 
                 }
 
                 //show results
@@ -77,6 +79,13 @@
                 return null;
             }
            }
+           function getCityByName(cityname){
+                for(let i = 0; i < n_cities; i++){
+                    if (cities[i].name == cityname){
+                        return cities[i];
+                    }
+                }
+           }
 
            //test functions
            function turnVisible(cardID){
@@ -108,4 +117,4 @@
             
             //testing
 
-            console.log(print(madrid.keywords));
+          
