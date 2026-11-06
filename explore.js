@@ -40,6 +40,8 @@
                 for (let i = 0; i < found; i++){
                     document.getElementById("title"+cards[i]).innerHTML = result[i];
                     document.getElementById("cost"+cards[i]).innerHTML = "Cost: " + getCityByName(result[i]).cost;
+                    document.getElementById("duration"+cards[i]).innerHTML = "Duration: " + getCityByName(result[i]).days + " days"; 
+                    document.getElementById("image"+cards[i]).src = getCityByName(result[i]).image;
                     //Recommend change: reuslt should be a city array, not a string array. 
                 }
 
@@ -99,17 +101,17 @@
 
             //objects
             //cities
-            let tokio = {name: "tokio", cost: 5000, country: "japan", continent: "asia", keywords: " ", isFavorite: false};
+            let tokio = {name: "tokio", cost: 5000, days: 30, country: "japan", continent: "asia", keywords: " ", isFavorite: false, image: "TokyoCard.jpeg" };
             tokio.keywords = createKeyword(tokio);
-            let osaka = {name: "osaka", cost: 5000, country: "japan", continent: "asia", keywords: " ", isFavorite: false};
+            let osaka = {name: "osaka", cost: 5000, days: 30, country: "japan", continent: "asia", keywords: " ", isFavorite: false, image: "OsakaCard.jpeg" };
             osaka.keywords = createKeyword(osaka);
-            let seul = {name: "seul", cost: 5000, country: "south korea", continent: "asia", keywords: " ", isFavorite: false};
+            let seul = {name: "seul", cost: 5000, days: 30, country: "south korea", continent: "asia", keywords: " ", isFavorite: false};
             seul.keywords = createKeyword(seul);
-            let busan = {name: "busan", cost: 5000, country: "south korea", continent: "asia", keywords: " ", isFavorite: false};
+            let busan = {name: "busan", cost: 5000, days: 30, country: "south korea", continent: "asia", keywords: " ", isFavorite: false};
             busan.keywords = createKeyword(busan);
-            let vancouver = {name: "vancouver", cost: 5000, country: "canada", continent: "north america", keywords: " ", isFavorite: false};
+            let vancouver = {name: "vancouver", cost: 5000, days: 30, country: "canada", continent: "north america", keywords: " ", isFavorite: false, image: "OsakaCard.jpeg" };
             vancouver.keywords = createKeyword(vancouver);
-            let madrid = {name: "madrid", cost: 5000, country: "spain", continent: "europe", keywords: " ", isFavorite: false};
+            let madrid = {name: "madrid", cost: 5000, days: 30, country: "spain", continent: "europe", keywords: " ", isFavorite: false, image: "OsakaCard.jpeg" };
             madrid.keywords = createKeyword(madrid);
 
             //allcities
