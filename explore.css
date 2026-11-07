@@ -1,7 +1,11 @@
+
+
+
 /*---------------------------Card Styling---------------------------------------*/
 .element{
             display: flex;
             flex-direction: column;
+            justify-content: center;
             background-color: grey; 
             padding: 1px;
             min-height: 300px;
@@ -9,34 +13,54 @@
             max-height: 300px;
             max-width: 210px;
             visibility: hidden;
-            justify-content: center;
-
-            padding-left: 5px;
+            
             
         }
         
         .textcontainer{ 
-            min-height: 75px
-            
+            padding-left: 5px;
+            min-height: 70px;
+            padding-bottom: 30px;
+
         }
         .buttoncontainer{
+           
             justify-content: center;
+            
             display: flex;
             flex-direction: row;
+            
             min-height: 25px;
             
         }
         .imagecontainer{
+            
             display: flex;
             justify-content: center;
+            align-items: center;
+            
             min-height:150px;
-            max-height:150px;
+            
             
         }
         .cardimage{
-            
+            display: initial;
             min-width: 210px;
             max-width: 210px;
             min-height: 150px;
             max-height: 150px;
+        }
+
+        /*---------------------------Text Styling for Each card--------------------------------------*/
+        .element h2{
+            font-size: 20px;
+            font-family: "Times New Roman";
+        }
+        .element p{
+            font-size: 15px;
+            font-family: "Times New Roman";
+        }
+        .element button{
+            font-size: 15px;
+            font-family: "Arial";
         }

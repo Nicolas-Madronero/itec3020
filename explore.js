@@ -50,12 +50,9 @@
                 for (let i = 0; i < found; i++){
                     document.getElementById("image"+cards[i]).src = getCityByName(result[i]).image;
                     document.getElementById("title"+cards[i]).innerHTML = result[i];
-                    document.getElementById("cost"+cards[i]).innerHTML = "Cost: " + getCityByName(result[i]).cost;
-                    document.getElementById("duration"+cards[i]).innerHTML = "Duration: " + getCityByName(result[i]).days + " days"; 
-                    document.getElementById("favButton"+cards[i]).innerHTML = returnFavoriteState(getCityByName(result[i]))
-                    document.getElementById("bookButton"+cards[i]).innerHTML = returnBookedState(getCityByName(result[i]))
-                
-                    //Recommend change: reuslt should be a city array, not a string array. returnFavoriteState(getCityByName(result[i]))
+                    document.getElementById("favButton"+cards[i]).innerHTML = returnFavoriteState(getCityByName(result[i]));
+                    document.getElementById("bookButton"+cards[i]).innerHTML = returnBookedState(getCityByName(result[i]));
+                    document.getElementById("details"+cards[i]).innerHTML = "Cost: "+getCityByName(result[i]).cost + "<br>Duration: " + getCityByName(result[i]).days + " days";
                 }
 
             }

@@ -6,11 +6,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script src = "explore.js"></script>
         <link rel="stylesheet" type="text/css" href="explore.css"/>
-
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
     </head>
     <body>
-        <h1>Explore</h1><hr>
-        <p>To test it try by writing 'Asia' or 'japan'</p>
+
+        <header class="site-header">
+        <div class="header-top">
+            <!--placeholder for the agency name cuz we dont know it yet-->
+            <span class="header-brand">Travel Agency</span>
+            <!--Contact info-->
+            <div class="header-contact">
+                <span class="header-phone">(416) 555-0182</span>
+                <span>88 The Pond Road, North York</span>
+            </div>
+
+            <!--link to the support page-->
+            <a class="header-support" href="support.html">
+                <!--the icon thing for like the support thing on the top right side of the page-->
+                <svg class="header-support-icon" viewBox="0 0 48 48">
+                    <circle cx="24" cy="13" r="6" fill="currentColor" />
+                    <circle cx="10" cy="17" r="4" fill="currentColor" />
+                    <circle cx="38" cy="17" r="4" fill="currentColor" />
+                    <path d="M14 35c0-6 4.5-10 10-10s10 4 10 10v3c-6 3-14 3-20 0zM3 33c0-4 3-7 7-7 1 0 2 .2 3 .6A14 14 0 0 0 11 35v2c-3 0-6-1-8-2zm42 0v2c-2 1-5 2-8 2v-2a14 14 0 0 0-2-8.4c1-.4 2-.6 3-.6 4 0 7 3 7 7z" fill="currentColor" />
+                </svg>
+                <span>Travel advice<br><strong>& support</strong></span>
+            </a>
+        </div>
+
+        <!--links in the nav bar-->
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="support.html">Support</a>
+            <a href="support.html">Favorites</a>
+        </nav>
+    </header>
+
+
+        <h1>Explore the world!</h1><hr>
+        <p>Click 'search' to see all results</p>
         <section>
             <input id="search" placeholder="Search for a location"></input>
             <button type = "button" id ="search_button" onclick="searchTrip()">Search</button><br>
@@ -29,8 +66,8 @@
                 <!--Information-->
                 <div class = "textcontainer">
                     <h2  id = "titleA" ></h2>
-                    <p  id = "costA" ></p>
-                    <p id = "durationA"></p>
+                    <p  id = "detailsA" ></p>
+                    
                 </div>
                 <!--buttons-->
                 <div class = "buttoncontainer">
@@ -48,8 +85,8 @@
                 </div>
                 <div class = "textcontainer">
                     <h2  id = "titleB" ></h2>
-                    <p  id = "costB" ></p>
-                    <p id = "durationB"></p>
+                    <p  id = "detailsB" ></p>
+                    
                 </div>
                 <!--buttons-->
                 <div class = "buttoncontainer">
@@ -67,8 +104,8 @@
                 </div>
                 <div class = "textcontainer">
                     <h2  id = "titleC" ></h2>
-                    <p  id = "costC" ></p>
-                    <p id = "durationC"></p>
+                    <p  id = "detailsC" ></p>
+                    
                 </div>
                 <!--buttons-->
                 <div class = "buttoncontainer">
@@ -86,8 +123,8 @@
                 </div>
                 <div class = "textcontainer">
                     <h2  id = "titleD" ></h2>
-                    <p  id = "costD" ></p>
-                    <p id = "durationD"></p>
+                    <p  id = "detailsD" ></p>
+                   
                 </div>
                 <!--buttons-->
                 <div class = "buttoncontainer">
