@@ -30,7 +30,8 @@
         }
         .buttoncontainer{
             justify-content: center;
-            
+            display: flex;
+            flex-direction: row;
             min-height: 25px;
             
         }
@@ -77,8 +78,8 @@
                 </div>
                 <!--buttons-->
                 <div class = "buttoncontainer">
-                    <button style = "grid-area: bookButton;">Book</button>
-                    <button style = "grid-area: favButton;">Add to favorite</button>
+                    <button>Book</button>
+                    <button id = "favButtonA" onclick = "addToFavorites(0)"></button>
                 </div>
                 
             </div>
@@ -96,8 +97,8 @@
                 </div>
                 <!--buttons-->
                 <div class = "buttoncontainer">
-                    <button style = "grid-area: bookButton;">Book</button>
-                    <button style = "grid-area: favButton;">Add to favorite</button>
+                    <button>Book</button>
+                    <button id = "favButtonB" onclick = "addToFavorites(1)"></button>
                 </div>
 
             </div>
@@ -115,8 +116,8 @@
                 </div>
                 <!--buttons-->
                 <div class = "buttoncontainer">
-                    <button style = "grid-area: bookButton;">Book</button>
-                    <button style = "grid-area: favButton;">Add to favorite</button>
+                    <button>Book</button>
+                    <button id = "favButtonC" onclick = "addToFavorites(2)"></button>
                 </div>
 
             </div>
@@ -134,8 +135,8 @@
                 </div>
                 <!--buttons-->
                 <div class = "buttoncontainer">
-                    <button style = "grid-area: bookButton;">Book</button>
-                    <button style = "grid-area: favButton;">Add to favorite</button>
+                    <button>Book</button>
+                    <button id = "favButtonD" onclick = "addToFavorites(3)"></button>
                 </div>
 
             </div>

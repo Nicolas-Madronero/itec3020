@@ -7,7 +7,9 @@
             const cards = ["A", "B", "C", "D"];
 
             let search_complete = false;
-            //Functions
+            //-----------FUNCTIONS---------------------------//
+
+            //-------------Backend oprations---------------//
             function updateResults(){
                 //Reset card visibility: 
                 if (search_complete == true){
@@ -36,33 +38,26 @@
                     }
                 }
                 
-                //Insert results information in cards
-                for (let i = 0; i < found; i++){
-                    document.getElementById("title"+cards[i]).innerHTML = result[i];
-                    document.getElementById("cost"+cards[i]).innerHTML = "Cost: " + getCityByName(result[i]).cost;
-                    document.getElementById("duration"+cards[i]).innerHTML = "Duration: " + getCityByName(result[i]).days + " days"; 
-                    document.getElementById("image"+cards[i]).src = getCityByName(result[i]).image;
-                    //Recommend change: reuslt should be a city array, not a string array. 
-                }
 
-                //show results
+                //Turn cards visible
                 for (let i = 0; i < found; i++){
                     turnVisible(cards[i]);
                 }
                     
                 search_complete = true;
 
-            }
-            function searchTrip(){
-                try{
-                    searchquery = document.getElementById("search").value;
+                //Insert results information in cards//
+                for (let i = 0; i < found; i++){
+                    document.getElementById("image"+cards[i]).src = getCityByName(result[i]).image;
+                    document.getElementById("title"+cards[i]).innerHTML = result[i];
+                    document.getElementById("cost"+cards[i]).innerHTML = "Cost: " + getCityByName(result[i]).cost;
+                    document.getElementById("duration"+cards[i]).innerHTML = "Duration: " + getCityByName(result[i]).days + " days"; 
+                    document.getElementById("favButton"+cards[i]).innerHTML = returnFavoriteState(getCityByName(result[i]))
+                    //Recommend change: reuslt should be a city array, not a string array. returnFavoriteState(getCityByName(result[i]))
                 }
-                catch(TypeError){
-                    searchquery = "Is Empty";
-                }
-                
-                updateResults();
+
             }
+            
             function createKeyword(city){
                 return city.name + " " + city.continent + " " + city.country;   
             }
@@ -89,7 +84,7 @@
                 }
            }
 
-           //test functions
+           //--------Update content----------------------------------------///
            function turnVisible(cardID){
                 document.getElementById(cardID).style.visibility="visible";
            }
@@ -98,24 +93,63 @@
                 //before city name
            }
            
+           
+           //-----------------------Get User Requests-------------------///
+           function searchTrip(){
+                try{
+                    searchquery = document.getElementById("search").value;
+                }
+                catch(TypeError){
+                    searchquery = "Is Empty";
+                }
+                
+                updateResults();
+            }
+            //function sendID(){}
+            //function bookTrip(){
+            
+            function addToFavorites(index){
+                if(getCityByName(document.getElementById("title"+cards[index]).innerHTML).isFavorite){
+                    unaddFromFavorites(index);
+                }
+                
+                else{ 
+                    getCityByName(document.getElementById("title"+cards[index]).innerHTML).isFavorite = true
+                    document.getElementById("favButton"+cards[index]).innerHTML = "Added to favorites";  
+                }
+            }
+            function unaddFromFavorites(index){
+                getCityByName(document.getElementById("title"+cards[index]).innerHTML).isFavorite = false;
+                document.getElementById("favButton"+cards[index]).innerHTML = "Add to favorites";   
+            }
+            //function returnBookState(city){
+                
+            function returnFavoriteState(city){ 
+                if (city.isFavorite){
+                    return "Added To favorites"
+                }else{
+                    return "Add to favorites"
+                }
 
+            }
+                
             //objects
             //cities
-            let tokio = {name: "tokio", cost: 5000, days: 30, country: "japan", continent: "asia", keywords: " ", isFavorite: false, image: "TokyoCard.jpeg" };
-            tokio.keywords = createKeyword(tokio);
-            let osaka = {name: "osaka", cost: 5000, days: 30, country: "japan", continent: "asia", keywords: " ", isFavorite: false, image: "OsakaCard.jpeg" };
+            let tokyo = {name: "Tokyo", cost: 5000, days: 30, country: "japan", continent: "asia", keywords: " ", isFavorite: false,isBooked: false, image: "TokyoCard.jpeg" };
+            tokyo.keywords = createKeyword(tokyo);
+            let osaka = {name: "Osaka", cost: 5000, days: 30, country: "japan", continent: "asia", keywords: " ", isFavorite: false, isBooked: false,image: "OsakaCard.jpeg" };
             osaka.keywords = createKeyword(osaka);
-            let seul = {name: "seul", cost: 5000, days: 30, country: "south korea", continent: "asia", keywords: " ", isFavorite: false};
+            let seul = {name: "Seul", cost: 5000, days: 30, country: "south korea", continent: "asia", keywords: " ", isFavorite: false,isBooked: false,};
             seul.keywords = createKeyword(seul);
-            let busan = {name: "busan", cost: 5000, days: 30, country: "south korea", continent: "asia", keywords: " ", isFavorite: false};
+            let busan = {name: "busan", cost: 5000, days: 30, country: "south korea", continent: "asia", keywords: " ", isFavorite: false,isBooked: false,};
             busan.keywords = createKeyword(busan);
-            let vancouver = {name: "vancouver", cost: 5000, days: 30, country: "canada", continent: "north america", keywords: " ", isFavorite: false, image: "OsakaCard.jpeg" };
+            let vancouver = {name: "Vancouver", cost: 5000, days: 30, country: "canada", continent: "north america", keywords: " ", isFavorite: false, isBooked: false,image: "VancouverCard.jpg" };
             vancouver.keywords = createKeyword(vancouver);
-            let madrid = {name: "madrid", cost: 5000, days: 30, country: "spain", continent: "europe", keywords: " ", isFavorite: false, image: "OsakaCard.jpeg" };
+            let madrid = {name: "Madrid", cost: 5000, days: 30, country: "spain", continent: "europe", keywords: " ", isFavorite: false, isBooked: false, image: "MadridCard.jpg" };
             madrid.keywords = createKeyword(madrid);
 
             //allcities
-            const cities = [tokio, osaka, vancouver, madrid];
+            const cities = [tokyo, osaka, vancouver, madrid];
             
             //testing
 
