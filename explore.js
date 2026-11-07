@@ -123,7 +123,13 @@
                 getCityByName(document.getElementById("title"+cards[index]).innerHTML).isFavorite = false;
                 document.getElementById("favButton"+cards[index]).innerHTML = "Add to favorites";   
             }
-
+            function returnFavoriteState(city){
+                if(city.isFavorite){
+                    return "Added to favorites";
+                }else{
+                    return "Add to favorites";
+                }
+            }
 
             
             //objects
