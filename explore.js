@@ -106,7 +106,7 @@
                 updateResults();
             }
             //function sendID(){}
-            //function bookTrip(){
+            
             
             function addToFavorites(index){
                 if(getCityByName(document.getElementById("title"+cards[index]).innerHTML).isFavorite){
@@ -118,21 +118,14 @@
                     document.getElementById("favButton"+cards[index]).innerHTML = "Added to favorites";  
                 }
             }
+
             function unaddFromFavorites(index){
                 getCityByName(document.getElementById("title"+cards[index]).innerHTML).isFavorite = false;
                 document.getElementById("favButton"+cards[index]).innerHTML = "Add to favorites";   
             }
-            //function returnBookState(city){
-                
-            function returnFavoriteState(city){ 
-                if (city.isFavorite){
-                    return "Added To favorites"
-                }else{
-                    return "Add to favorites"
-                }
 
-            }
-                
+
+            
             //objects
             //cities
             let tokyo = {name: "Tokyo", cost: 5000, days: 30, country: "japan", continent: "asia", keywords: " ", isFavorite: false,isBooked: false, image: "TokyoCard.jpeg" };
