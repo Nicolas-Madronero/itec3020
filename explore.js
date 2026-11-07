@@ -53,6 +53,8 @@
                     document.getElementById("cost"+cards[i]).innerHTML = "Cost: " + getCityByName(result[i]).cost;
                     document.getElementById("duration"+cards[i]).innerHTML = "Duration: " + getCityByName(result[i]).days + " days"; 
                     document.getElementById("favButton"+cards[i]).innerHTML = returnFavoriteState(getCityByName(result[i]))
+                    document.getElementById("bookButton"+cards[i]).innerHTML = returnBookedState(getCityByName(result[i]))
+                
                     //Recommend change: reuslt should be a city array, not a string array. returnFavoriteState(getCityByName(result[i]))
                 }
 
@@ -107,7 +109,7 @@
             }
             //function sendID(){}
             
-            
+            //--------------------------Favorite Functionality---------------------------------------//
             function addToFavorites(index){
                 if(getCityByName(document.getElementById("title"+cards[index]).innerHTML).isFavorite){
                     unaddFromFavorites(index);
@@ -128,6 +130,30 @@
                     return "Added to favorites";
                 }else{
                     return "Add to favorites";
+                }
+            }
+
+            //--------------------------Booking Functionality---------------------------------------//
+            function bookTrip(index){
+                if(getCityByName(document.getElementById("title"+cards[index]).innerHTML).isBooked){
+                    unbookTrip(index);
+                }
+                
+                else{ 
+                    getCityByName(document.getElementById("title"+cards[index]).innerHTML).isBooked = true
+                    document.getElementById("bookButton"+cards[index]).innerHTML = "Booked";  
+                }
+            }
+
+            function unbookTrip(index){
+                getCityByName(document.getElementById("title"+cards[index]).innerHTML).isBooked = false;
+                document.getElementById("bookButton"+cards[index]).innerHTML = "Book";   
+            }
+            function returnBookedState(city){
+                if(city.isBooked){
+                    return "Booked";
+                }else{
+                    return "Book";
                 }
             }
 

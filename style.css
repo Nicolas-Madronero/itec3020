@@ -436,3 +436,12 @@ a:focus-visible {
         gap: 25px;
     }
 }
+
+.form{
+    display: flex;
+    flex-direction: column;
+    max-width: 100px;
+    flex-wrap: wrap;
+    padding : 20px;
+}
+
