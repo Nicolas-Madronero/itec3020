@@ -1,29 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--matching the font that was used in the index-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">    <meta charset="UTF-8">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel Agency | About Us & Customer Support</title>
-  <script src="support.js"></script>
-  
+  <title>Travel Agency | Contact Us & Customer Support</title>
+  <link rel="stylesheet" href="style.css">  
 </head>
 
 <body>
-  <header>
-    <h1>Support</h1>
-  </header>
+   <header class="site-header">
+        <div class="header-top header-top-home">
+            <!--placeholder for the agency name cuz we dont know it yet-->
+            <span class="header-brand">Broke Abroad</span>
 
-  <main>
+            <!--contact information and link to the support page-->
+            <a class="header-support" href="support.html">
+                <span class="header-phone">(416) 555-0182</span>
+                <span>88 The Pond Road, North York</span>
+            </a>
+        </div>
+        
+        <!--links in the nav bar-->
+        <nav class="main-nav">
 
-    <section id="customer-support">
-      <h2>Customer Support</h2>
-      <p>
-        Our customer support team can help with bookings, itinerary changes, refund
-        questions, travel documents, and general travel inquiries.
-      </p>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>Home
+            </a>
+
+            <a href="explore.html">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                </svg>Explore
+            </a>
+
+            <a href="support.html">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                </svg>Support
+            </a>
+
+            <a class="favorites-main" href="explore.html#favorites">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>Favorites
+            </a>
+
+        </nav>
+    </header>
+
+<main>
+  <section id="customer-support" class="support-intro">
+    <h2>Customer Support</h2>
+    <p>
+      Our customer support team can help with bookings, itinerary changes, refund
+      questions, travel documents, and general travel inquiries.
+    </p>
+  </section>
+
+  <div class="support-layout">
+    <section id="agency-contact" class="support-column">
+      <h3>Agency Contact Information</h3>
 
       <div class="contact-info">
-        <h3>Agency Contact Information</h3>
         <p><strong>Phone:</strong> (416) 555-0182</p>
         <p><strong>Fax:</strong> (416) 555-0193</p>
         <p><strong>Email:</strong> support@travelagency.ca</p>
@@ -39,11 +84,11 @@
       </div>
     </section>
 
-    <section id="contact-us">
-      <h2>Contact Us</h2>
+    <section id="contact-us" class="support-column">
+      <h3>Contact Us</h3>
       <p>
-        Have a question? Fill out the form below and our team will respond within one
-        business day.
+        Have a question? Fill out the form below and our team will respond within
+        one business day.
       </p>
 
       <form id="contactForm" novalidate>
@@ -81,5 +126,6 @@
     </section>
   </main>
 
+  <script src="support.js"></script>
 </body>
 </html>
