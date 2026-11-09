@@ -231,16 +231,14 @@ a:focus-visible {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex: 1 1 340px;
+    flex: 1 1 240px;
     min-width: 0;
     max-width: 300px;
     min-height: 100px;
     margin: 0;
     padding: 22px 24px;
     border-left: 5px solid #493175;
-    border-radius: 5%;
-    background: rgba(134, 102, 194, 0.65);
-    color: #ffffff;
+    color: black;
     font-size: 1.1rem;
     font-weight: 700;
     text-align: left;
