@@ -1,66 +1,194 @@
+/* search and destination results. */
+.destinations {
+    max-width: 81.25rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6.25rem;
+}
+
+.destinations-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.destinations-heading h2 {
+    margin: 0;
+    color: #271646;
+    font-size: 2rem;
+    line-height: 1.15;
+}
+
+/* shared search and card controls. */
+.search-controls button,
+.buttoncontainer button {
+    border: 0;
+    border-radius: 1% / 5%;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.search-controls input:focus-visible,
+.search-controls button:focus-visible,
+.buttoncontainer button:focus-visible {
+    outline: 0.1875rem solid #71579c;
+    outline-offset: 0.1875rem;
+}
+.search-controls button:hover,
+.book-button:hover {
+    background: #493175;
+}
 
 
 
-/*---------------------------Card Styling---------------------------------------*/
-.element{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-color: grey; 
-            padding: 1px;
-            min-height: 300px;
-            min-width: 210px;
-            max-height: 300px;
-            max-width: 210px;
-            visibility: hidden;
-            
-            
-        }
-        
-        .textcontainer{ 
-            padding-left: 5px;
-            min-height: 70px;
-            padding-bottom: 30px;
+/* search form. */
+.search-form {
+    padding: 1.375rem;
+    border: 0.0625rem solid #ded6eb;
+    border-radius: 1% / 5%;
+    background: #8872af;
+}
 
-        }
-        .buttoncontainer{
-           
-            justify-content: center;
-            
-            display: flex;
-            flex-direction: row;
-            
-            min-height: 25px;
-            
-        }
-        .imagecontainer{
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-            min-height:150px;
-            
-            
-        }
-        .cardimage{
-            display: initial;
-            min-width: 210px;
-            max-width: 210px;
-            min-height: 150px;
-            max-height: 150px;
-        }
+.search-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
 
-        /*---------------------------Text Styling for Each card--------------------------------------*/
-        .element h2{
-            font-size: 20px;
-            font-family: "Times New Roman";
-        }
-        .element p{
-            font-size: 15px;
-            font-family: "Times New Roman";
-        }
-        .element button{
-            font-size: 15px;
-            font-family: "Arial";
-        }
+.search-controls {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.search-controls input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.81rem 0.94rem;
+    border: 0.06rem solid #b5a5ce;
+    border-radius: 1% / 5%;
+    font: inherit;
+    font-size: 1rem;
+}
+
+.search-controls button {
+    padding: 0.81rem 1.75rem;
+    color: white;
+    background: #59437c;
+}
+
+/* Search results. */
+.results-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    margin: 2.75rem 0 1.125rem;
+}
+
+.results-heading h3 {
+    margin: 0;
+    color: #271646;
+    font-size: 1.5rem;
+}
+
+.results-heading p,
+.destinations noscript {
+    margin: 0;
+    color: #4e5361;
+    font-size: 1rem;
+}
+
+/* cards resize to fit screen. */
+.explore-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14.375rem, 1fr));
+    gap: 1.375rem;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 0.2rem solid #a27ddd;
+    border-radius: 5% / 2%;
+    background: white;
+}
+
+.element[hidden] {
+    display: none;
+}
+
+.cardimage {
+    width: 100%;
+    height: 11.875rem;
+    object-fit: cover;
+    background: #ebe0ff;
+}
+
+.textcontainer {
+    flex: 1;
+    padding: 1.25rem 1.25rem 0.9rem;
+}
+
+.textcontainer h3 {
+    margin: 0 0 0.5rem;
+    color: black;
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+.textcontainer p {
+    margin: 0;
+    color: #4e5361;
+    font-size: 0.95rem;
+}
+
+.buttoncontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1.25rem 1.25rem;
+}
+
+.buttoncontainer button {
+    min-height: 2.75rem;
+    padding: 0.6rem 0.75rem;
+}
+
+.book-button {
+    color: white;
+    background: #71579c;
+}
+
+.favorite-button {
+    color: white;
+    background: #ab92d4;
+}
+
+.favorite-button:hover,
+.favorite-button[aria-pressed="true"] {
+    background: #493175;
+}
+
+/* Keep the search and headings comfortable on a phone. */
+@media (max-width: 37.5rem) {
+    .destinations { padding: 3.25rem 1.25rem 4.375rem; }
+    .destinations-heading { display: block; }
+    .search-controls { flex-direction: column; }
+    .results-heading { margin-top: 2.25rem; }
+    .explore-cards { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 56.25rem) {
+    .destinations-heading h2 { font-size: 2.4rem; }
+}
+
+@media (min-width: 68.75rem) {
+    .destinations-heading h2 { font-size: 2.8rem; }
+}
