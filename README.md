@@ -24,6 +24,10 @@ This function is called in 'updateResults()' in order to filter through 'cities'
 ### Show cards in the screen: 
 For showing the actual cards in the screen it is used a function called 'updateResults()'. Every card has a fixed position in the HTML file, but the cities information is injected in them through 'updateResults()' in order to create the ilussion that the cards are changing of position. 
 
-After filtering all the cities that are going to be shown and having deposited their names in 'results', 'updateResults()' updates the inner HTML data of each one of the cards (from left to right, up to down) with the data in each one of the the cities whose names are in 'results'. 
+After filtering all the cities that are going to be shown and having deposited their names in 'results', 'updateResults()' updates the inner HTML data of each one of the cards (from left to right, up to down) with the data in each one of the the cities that can be retrieved from 'results'. 
+
+Although 'results' only stores names, cities can still be extracted from it by using dupplementary functions like 'getCityByName(name)'. 
+
+
 
 
