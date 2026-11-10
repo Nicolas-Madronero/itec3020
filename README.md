@@ -28,6 +28,11 @@ After filtering all the cities that are going to be shown and having deposited t
 
 Although 'results' only stores names, cities can still be extracted from it by using dupplementary functions like 'getCityByName(name)'. 
 
+### Favorites Button functionality. 
+When the favorite button is clicked on a card, the system uses local storage to store that card in a JSON, and display it in favorites.js. 
+
+
+
 
 
 
