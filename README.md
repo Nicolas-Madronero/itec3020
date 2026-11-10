@@ -31,7 +31,11 @@ Although 'results' only stores names, cities can still be extracted from it by u
 ### Favorites Button functionality. 
 When the favorite button is clicked on a card, the system uses local storage to store that card in a JSON, and display it in favorites.js. 
 
-Every city is stored in a set called 'favorites' by using the 'addToFavorites(index)' function. Afterwards they are stored in local sotorage as JSON by using JSON.parse(localSotrage.setItem("favorites"
+Every city is stored in a set called 'favorites' by using the 'addToFavorites(index)' function. Afterwards they are stored in local sotorage as JSON by using JSON.parse(localSotrage.setItem("favorites") || "[]") in 'saveFavorites().
+
+For preventing the page refresh to erasing the information in the cards, once the user switches to the 'favorites.html' page, a window.addEventListener(DOMContentLoaded", function()) is added in order to show the favorites in 'favorite.html' as long as there are changes in the DOM content.
+
+
 
 
 
