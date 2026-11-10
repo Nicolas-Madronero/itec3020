@@ -19,4 +19,11 @@ The system utilizes a function called 'searchTrip()' in order to retrieve the St
 ### Filter functionality
 The system then utilized the 'getMatches(word, city)' - which specifically uses RegExp functions to check if a word is in a 'city.keywords' and retrieve either the city's name or an empty string. 
 
-This function is called in 'updateResults()' in order to filter through 'cities', check which cities contain the 'searchQuery' string in their respective 'keywords', and store them in an array called results.  
+This function is called in 'updateResults()' in order to filter through 'cities', check which cities contain the 'searchQuery' string in their respective 'keywords', and store their names in an string array called 'results'.  
+
+### Show cards in the screen: 
+For showing the actual cards in the screen it is used a function called 'updateResults()'. Every card has a fixed position in the HTML file, but the cities information is injected in them through 'updateResults()' in order to create the ilussion that the cards are changing of position. 
+
+After filtering all the cities that are going to be shown and having deposited their names in 'results', 'updateResults()' updates the inner HTML data of each one of the cards (from left to right, up to down) with the data in each one of the the cities whose names are in 'results'. 
+
+
